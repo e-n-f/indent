@@ -18,6 +18,8 @@
  * GNU General Public License for more details.
  */
 
+#define _LARGEFILE64_SOURCE
+
 #include <string.h>
 
 #include "sys.h"

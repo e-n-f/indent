@@ -85,6 +85,6 @@ extern void initialize_backups(void);
 
 extern void make_backup(
     file_buffer_ty * file, 
-    const struct stat * file_stats);
+    const struct stat64 * file_stats);
 
 #endif /* INDENT_BACKUP_H */

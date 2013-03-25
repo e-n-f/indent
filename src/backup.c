@@ -83,6 +83,8 @@
  * Written by jla, based on code from djm (see `patch')
  */
 
+#define _LARGEFILE64_SOURCE
+
 #include "sys.h"
 
 #include <ctype.h>
@@ -479,8 +481,8 @@ void initialize_backups(void)
  */
 
 void make_backup(
-    file_buffer_ty     * file,
-    const struct stat  * file_stats)
+    file_buffer_ty      * file,
+    const struct stat64 * file_stats)
 {
     FILE         * bf;
     char         * backup_filename;

@@ -42,6 +42,8 @@
 #ifndef SYS_H
 #define SYS_H
 
+#define _LARGEFILE64_SOURCE
+
 #ifdef HAVE_CONFIG_H
    #include "config.h"
 #endif

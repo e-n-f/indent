@@ -42,6 +42,8 @@
  * - 2002-01-17 D.Ingamells Add a final newline if not present in file.
  */
 
+#define _LARGEFILE64_SOURCE
+
 #include "sys.h"
 
 #include <ctype.h>
@@ -241,8 +243,8 @@ int current_column (void)
  */
 
 file_buffer_ty * read_file(
-    char        * filename,
-    struct stat * file_stats)
+    char          * filename,
+    struct stat64 * file_stats)
 {
     static file_buffer_ty fileptr;
     
@@ -262,7 +264,7 @@ file_buffer_ty * read_file(
         fatal (_("Can't open input file %s"), filename);
     }
 
-    if (fstat(fd, file_stats) < 0)
+    if (fstat64(fd, file_stats) < 0)
     {
         fatal (_("Can't stat input file %s"), filename);
     }

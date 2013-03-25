@@ -49,6 +49,8 @@
  * - 2008-03-08 DI Re-baselined on the more acceptable (license-wise) OpenBSD release 3.4.
  */
 
+#define _LARGEFILE64_SOURCE
+
 #include "sys.h"
 
 #if defined (HAVE_UNISTD_H)
@@ -3159,7 +3161,7 @@ static exit_values_ty indent_multiple_files(void)
     for (i = 0; input_files; i++, input_files--)
     {
         exit_values_ty status;
-        struct stat file_stats;
+        struct stat64 file_stats;
 
         in_name = in_file_names[i];
         out_name = in_file_names[i];
@@ -3202,7 +3204,7 @@ static exit_values_ty indent_multiple_files(void)
 static exit_values_ty indent_single_file(BOOLEAN using_stdin)
 {
     exit_values_ty exit_status = total_success;
-    struct stat    file_stats;
+    struct stat64  file_stats;
 
     if ((input_files == 0) || using_stdin)
     {

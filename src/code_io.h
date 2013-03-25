@@ -64,7 +64,7 @@ extern char   * cur_line;
 
 extern char * skip_horiz_space(const char * p);
 
-extern file_buffer_ty *read_file (char *filename, struct stat *);
+extern file_buffer_ty *read_file (char *filename, struct stat64 *);
 extern file_buffer_ty *read_stdin (void);
 extern int current_column (void);
 extern void fill_buffer (void);

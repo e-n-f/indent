@@ -56,6 +56,8 @@
  *            Added --indent-label and --linux-style options.
  */
 
+#define _LARGEFILE64_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -1341,7 +1343,7 @@ extern void reopen_output_trunc(
  */
 
 extern void close_output(
-     struct stat * file_stats,
+     struct stat64 * file_stats,
      const char  * filename)
 {
     if (output != stdout)

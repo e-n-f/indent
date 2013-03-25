@@ -66,7 +66,7 @@ extern void reopen_output_trunc(
     const char * filename);
 
 extern void close_output(
-    struct stat * file_stats,
+    struct stat64 * file_stats,
      const char  * filename);
 
 extern void inhibit_indenting(
